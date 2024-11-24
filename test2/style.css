@@ -1,0 +1,205 @@
+body, html { 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrolling and crop content */
+    background-color: black;
+    */
+
+    
+}
+
+/* main container for alle elementer */
+.main-container {
+ position: relative;
+    width: 100vw; 
+    height: 100vh; 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: -2; 
+
+    background: #2980B9;
+
+    opacity: 0;
+    
+}
+
+
+.fjellContainer {
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 100%; 
+    height: auto; 
+    z-index: 2; 
+}
+
+
+#fjell {
+    display: block;
+    width: 100%; 
+    height: 100%;
+
+    pointer-events: none;
+
+    animation-name: fjell;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes fjell {
+    0% {filter: hue-rotate(-22deg)}
+    100% {filter: hue-rotate(10deg)}
+
+}
+
+#skyer {
+    width: 100%;
+    top: 60px;
+    position: absolute;
+    z-index: -1;
+
+    animation-name: clouds;
+    animation-duration: 75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+
+    opacity: 1;
+}
+
+@keyframes clouds {
+    0% { transform: translateX(-30vw); } 
+    100% { transform: translateX(40vw); }
+}
+
+#skyer2 {
+    width: 100%;
+    top: 10px;
+    position: absolute;
+    z-index: -1;
+
+    animation-name: clouds2;
+    animation-duration: 52s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    
+
+}
+
+@keyframes clouds2 {
+    0% { transform: translateX(-10vw); } 
+    100% { transform: translateX(40vw); } 
+}
+
+#himmel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: -2;
+    cursor: none;
+
+    animation-name: skyColor;
+    animation-duration: 8s;
+}
+
+@keyframes skyColor {
+    0% { filter: hue-rotate(80deg) brightness(60%)} 
+    100% { filter: hue-rotate(0deg)} 
+
+}
+
+#sol {
+    position: absolute;
+    width: 8vw; 
+    height: 8vw; 
+    background-color: yellow;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffe864, #f5b235);
+    z-index: -1; 
+
+    left: 50%; 
+    bottom: 0; 
+    transform: translateX(-50%); 
+
+    /* Animation */
+    animation-name: sunRise;
+    animation-duration: 12s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+#sol:hover {
+    transform: scale(1.2);
+}
+
+
+@keyframes sunRise {
+    0% {
+        transform: translate(-50%, -25vw); /* Start at the bottom-center */
+    }
+    100% {
+        transform: translate(-50%, -38vw); /* Move upwards */
+    }
+
+}
+
+
+#h1-tittel {
+    position: absolute; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    font-size: 3vw;
+
+    color: rgb(230, 245, 178); /* Visible text color */
+    text-shadow: 2px 2px 1px orange;
+    z-index: 4; 
+    text-align: center; 
+
+
+    animation: h1 5s ease-in;
+    
+}
+
+
+@keyframes h1 {
+    0% {opacity: 0%; filter: blur(5px);}
+    100% {opacity: 100%; filter: blur(0px);}
+}
+
+
+#autumnTree {
+    position: absolute;
+    display: block;
+    width: 100%; 
+    height: 100%;
+    clip-path: polygon(69% 68%, 70% 49%, 100% 47%, 100% 70%, 100% 100%, 56% 100%, 61% 96%, 91% 91%, 89% 82%, 73% 75%);
+    cursor: pointer;
+
+    z-index: 1;
+
+    transition: all 0.5s;
+    
+}
+
+#autumnTree:hover {
+    transform: scale(1.02);
+}
